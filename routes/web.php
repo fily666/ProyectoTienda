@@ -20,3 +20,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+/* Restriccion URL del Admin - Rol Admin*/
+Route::group(['middleware' => ['admin']], function () {
+
+    //
+});
+
+/* Restriccion URL de la Tienda - Rol Tienda*/
+Route::group(['middleware' => ['tienda']], function () {
+
+    //
+});

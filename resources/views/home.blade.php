@@ -14,7 +14,17 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    @if(Auth::check())
+                    @if(Auth::user()->role_id == 1)
+
+                    {{ __('You are logged in! es Administrador') }}
+                    
+                    @elseif(Auth::user()->role_id == 2)
+
+                    {{ __('You are logged in! es Tienda') }}
+
+                    @endif
+                    @endif
                 </div>
             </div>
         </div>
